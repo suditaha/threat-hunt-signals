@@ -265,7 +265,7 @@ PHTGHealthCloudTray
 ```powershell
 powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\ProgramData\PHTG\HealthCloud\Bin\HealthCloudTray.ps1"
 ```
-### Evidence
+### Evidence Screenshot
 
 <img width="630" height="355" alt="Screenshot 2026-05-31 at 10 55 25 PM" src="https://github.com/user-attachments/assets/5d7ed57f-4332-4957-a08d-b5c815be8dd5" />
 
@@ -287,7 +287,7 @@ Location:
 Startup Folder
 ```
 
-### Evidence
+### Evidence Screenshot
 
 <img width="625" height="355" alt="Screenshot 2026-05-31 at 10 56 53 PM" src="https://github.com/user-attachments/assets/28b407dc-ea93-43d3-a4a2-4ec2f204630e" />
 
