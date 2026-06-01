@@ -331,6 +331,12 @@ T1547.009
 HKLM\SYSTEM\ControlSet001\Services\EventLog\Application\PHTGHealthCloud
 ```
 
+### Evidence Screenshot
+
+<img width="618" height="384" alt="Screenshot 2026-06-01 at 1 52 54 PM" src="https://github.com/user-attachments/assets/924731d9-2990-479d-90b4-a6bf1b9cd183" />
+
+The operator registered a custom Application event log source named PHTGHealthCloud, enabling the tooling to write custom events into the Windows Application log.
+
 ### Purpose
 
 Allowed tooling to:
@@ -338,7 +344,7 @@ Allowed tooling to:
 - Write custom Application log events
 - Blend activity into legitimate Windows logging
 
-### Evidence
+### Evidence Screenshot
 
 <img width="623" height="351" alt="Screenshot 2026-06-01 at 10 47 16 AM" src="https://github.com/user-attachments/assets/e905146b-e19b-4ea1-81f0-f01c9294c701" />
 
@@ -509,6 +515,18 @@ Escalated:
 2047999
 ```
 
+### Evidence Screenshot
+
+<img width="626" height="399" alt="Screenshot 2026-06-01 at 1 57 02 PM" src="https://github.com/user-attachments/assets/4fca6fb5-82f8-483d-8381-e1f85f4b59c9" />
+
+PowerShell running under vmadminusername opened handles to lsass.exe and escalated access from 5136 to 2047999 (PROCESS_ALL_ACCESS).
+
+### Evidence Screenshot
+
+<img width="630" height="399" alt="Screenshot 2026-06-01 at 1 58 30 PM" src="https://github.com/user-attachments/assets/90a36b78-c197-471d-8df1-9a038f82d366" />
+
+The only non-system process observed accessing LSASS during the hunt window was powershell.exe running under vmadminusername.
+
 ### Significance
 
 PowerShell first obtained limited access before escalating to near full access against LSASS.
@@ -532,6 +550,14 @@ T1003.001 - LSASS Memory
 ```
 
 ---
+
+## Investigation Statistics
+
+### Evidence Screenshot
+
+<img width="627" height="403" alt="Screenshot 2026-06-01 at 2 14 49 PM" src="https://github.com/user-attachments/assets/b9e28310-3458-4660-ba18-6e8c4d21eef9" />
+
+PowerShell execution, WMI-based process creation, token modification events, Defender activity, and LSASS access events were among the most frequently observed behaviors during the intrusion.
 
 # Final Assessment
 
