@@ -153,6 +153,7 @@ C:\Users\vmAdminUsername\Documents\PHTG\_.ps1
 
 Multiple hidden PowerShell payloads executed with ExecutionPolicy Bypass, beginning with _.ps1 and transitioning into a series of task_FLAG scripts staged within the HealthCloud workspace.
 
+
 ### Execution Flags
 
 ```powershell
@@ -351,6 +352,14 @@ updates.health-cloud.cc
 https://status.health-cloud.cc/api/checkin
 https://status.health-cloud.cc/api/status
 ```
+
+### Evidence Screenshot
+
+<img width="625" height="393" alt="Screenshot 2026-06-01 at 11 19 38 AM" src="https://github.com/user-attachments/assets/417ca9bd-daf9-4da3-9059-08c845171b47" />
+
+The execution of `task_FLAG-01.ps1` was immediately followed by outbound
+communication to HealthCloud infrastructure, confirming successful beacon
+activity and command-and-control communication.
 
 ### Healthcheck Loop
 
