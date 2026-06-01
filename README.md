@@ -153,6 +153,15 @@ C:\Users\vmAdminUsername\Documents\PHTG\_.ps1
 
 Multiple hidden PowerShell payloads executed with ExecutionPolicy Bypass, beginning with _.ps1 and transitioning into a series of task_FLAG scripts staged within the HealthCloud workspace.
 
+### Command Shell Execution
+
+The operator leveraged cmd.exe to launch additional
+PowerShell payloads, creating an extra layer between
+the original execution source and the payload.
+
+### Evidence Screenshot
+
+<img width="626" height="351" alt="Screenshot 2026-06-01 at 1 15 20 PM" src="https://github.com/user-attachments/assets/810b5c4e-8683-4880-8671-2372f62a592d" />
 
 ### Execution Flags
 
@@ -197,6 +206,16 @@ TempCache
 <img width="626" height="357" alt="Screenshot 2026-05-31 at 10 37 55 PM" src="https://github.com/user-attachments/assets/f4134a57-5b39-41cd-891a-ce019c99f7f2" />
 
 The Cache directory contained the majority of concealment activity. Hidden file operations were concentrated in Cache (17) versus TempCache (2), indicating it was the primary staging location for operator tooling.
+
+### Artifact Concealment
+
+The operator used attrib.exe with the hidden (+h) and
+system (+s) attributes to conceal payloads and operational
+artifacts throughout the HealthCloud workspace.
+
+### Evidence Screenshot
+
+<img width="622" height="352" alt="Screenshot 2026-06-01 at 12 46 56 PM" src="https://github.com/user-attachments/assets/56c2c648-85ba-4d4f-82ee-9bd275c4d90f" />
 
 ### Concealment Activity
 
@@ -266,6 +285,7 @@ PHTGHealthCloudTray
 ```powershell
 powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\ProgramData\PHTG\HealthCloud\Bin\HealthCloudTray.ps1"
 ```
+
 ### Evidence Screenshot
 
 <img width="630" height="355" alt="Screenshot 2026-05-31 at 10 55 25 PM" src="https://github.com/user-attachments/assets/5d7ed57f-4332-4957-a08d-b5c815be8dd5" />
@@ -355,11 +375,11 @@ https://status.health-cloud.cc/api/status
 
 ### Evidence Screenshot
 
-<img width="625" height="393" alt="Screenshot 2026-06-01 at 11 19 38 AM" src="https://github.com/user-attachments/assets/417ca9bd-daf9-4da3-9059-08c845171b47" />
+<img width="628" height="396" alt="Screenshot 2026-06-01 at 11 58 15 AM" src="https://github.com/user-attachments/assets/4da82a4c-b7ef-45cb-b50b-0a5ffd4d25cf" />
 
-The execution of `task_FLAG-01.ps1` was immediately followed by outbound
-communication to HealthCloud infrastructure, confirming successful beacon
-activity and command-and-control communication.
+PowerShell activity generated outbound connections to
+status.health-cloud.cc and updates.health-cloud.cc,
+confirming command-and-control beacon traffic.
 
 ### Healthcheck Loop
 
