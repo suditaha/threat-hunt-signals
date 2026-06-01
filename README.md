@@ -1,6 +1,4 @@
-<p align="center">
-<img src="images/banner.png" width="100%">
-</p>
+<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/e1dc7b3c-6a45-4f39-83ce-61fe61841171" />
 
 # Signal Before The Noise 2 - Threat Hunt Investigation
 
@@ -125,6 +123,11 @@ DeviceLogonEvents
 | where DeviceName == "azwks-phtg-01"
 | project Timestamp, AccountName, RemoteIP, LogonType
 ```
+### Evidence Screenshot
+
+<img width="624" height="353" alt="Screenshot 2026-05-31 at 10 32 01 PM" src="https://github.com/user-attachments/assets/2dbbf56c-1091-4cad-a320-306702a40e4d" />
+
+The operator successfully authenticated using the vmadminusername account and established a RemoteInteractive session from 10.0.0.152 onto azwks-phtg-01.
 
 ### Conclusion
 
@@ -143,6 +146,12 @@ azwks-phtg-01
 ```text
 C:\Users\vmAdminUsername\Documents\PHTG\_.ps1
 ```
+
+### Evidence Screenshot
+
+<img width="629" height="351" alt="Screenshot 2026-05-31 at 10 34 24 PM" src="https://github.com/user-attachments/assets/9679a25b-f52f-4130-85da-63f8c3dfa476" />
+
+Multiple hidden PowerShell payloads executed with ExecutionPolicy Bypass, beginning with _.ps1 and transitioning into a series of task_FLAG scripts staged within the HealthCloud workspace.
 
 ### Execution Flags
 
@@ -181,6 +190,12 @@ Cache
 Bin
 TempCache
 ```
+
+### Evidence Screenshot
+
+<img width="626" height="357" alt="Screenshot 2026-05-31 at 10 37 55 PM" src="https://github.com/user-attachments/assets/f4134a57-5b39-41cd-891a-ce019c99f7f2" />
+
+The Cache directory contained the majority of concealment activity. Hidden file operations were concentrated in Cache (17) versus TempCache (2), indicating it was the primary staging location for operator tooling.
 
 ### Concealment Activity
 
