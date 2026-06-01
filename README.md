@@ -317,6 +317,16 @@ Allowed tooling to:
 - Write custom Application log events
 - Blend activity into legitimate Windows logging
 
+### Evidence
+
+<img width="623" height="351" alt="Screenshot 2026-06-01 at 10 47 16 AM" src="https://github.com/user-attachments/assets/e905146b-e19b-4ea1-81f0-f01c9294c701" />
+
+Registry activity confirmed creation of the PHTGHealthCloud Application Event Log source under:
+
+HKLM\SYSTEM\ControlSet001\Services\EventLog\Application\PHTGHealthCloud
+
+The same activity also revealed supporting HealthCloud scheduled-task infrastructure used by the operator.
+
 ---
 
 ## Phase 8 — Beaconing Activity
