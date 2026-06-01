@@ -265,6 +265,11 @@ PHTGHealthCloudTray
 ```powershell
 powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\ProgramData\PHTG\HealthCloud\Bin\HealthCloudTray.ps1"
 ```
+### Evidence
+
+<img width="630" height="355" alt="Screenshot 2026-05-31 at 10 55 25 PM" src="https://github.com/user-attachments/assets/5d7ed57f-4332-4957-a08d-b5c815be8dd5" />
+
+The PHTGHealthCloudTray Run key was configured to launch a hidden PowerShell process that executes HealthCloudTray.ps1 whenever the user logs in.
 
 ---
 
@@ -281,6 +286,12 @@ Location:
 ```text
 Startup Folder
 ```
+
+### Evidence
+
+<img width="625" height="355" alt="Screenshot 2026-05-31 at 10 56 53 PM" src="https://github.com/user-attachments/assets/28b407dc-ea93-43d3-a4a2-4ec2f204630e" />
+
+A shortcut named PHTG HealthCloud.lnk was created within the user's Startup folder, providing an additional persistence mechanism that launches automatically during logon.
 
 MITRE:
 
